@@ -1,0 +1,25 @@
+name: work
+
+on:
+  workflow_call:
+    inputs: 
+      a:
+        required: true
+        type: number
+      b: 
+        required: true
+        type: number
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Provide Permission
+        run: chmod +x bash.sh
+      - name: Run the bash
+        run: ./bash.sh "$TEST1" "$TEST2"
+        env:
+          TEST1: ${{ inputs.a }}
+          TEST2: ${{ inputs.b }}
