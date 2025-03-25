@@ -1,4 +1,4 @@
-name: work
+name: worker
 
 on:
   workflow_call:
