@@ -23,3 +23,7 @@ jobs:
         env:
           TEST1: ${{ inputs.a }}
           TEST2: ${{ inputs.b }}
+      - name: Run the test
+        run: |
+          chmod +x test.sh
+          ./test.sh
